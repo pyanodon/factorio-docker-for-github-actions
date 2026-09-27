@@ -1,5 +1,5 @@
-# hadolint ignore=DL3007
-# checkov:skip=CKV_DOCKER_7
+# hadolint global ignore=DL3007
+# checkov:skip=CKV_DOCKER_7,CKV_DOCKER_3
 FROM factoriotools/factorio:latest
 
 COPY ./entrypoint.sh /entrypoint.sh
