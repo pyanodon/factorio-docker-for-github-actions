@@ -2,4 +2,4 @@ name: "Factorio mod tests"
 description: "Load mods into Factorio and run test scripts"
 runs:
   using: "docker"
-  image: "docker://ghcr.io/shadowglass0/factorio-docker-for-github-actions:main"
+  image: "docker://ghcr.io/pyanodon/factorio-docker-for-github-actions:main"
