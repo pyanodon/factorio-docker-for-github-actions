@@ -1,5 +1,6 @@
 # hadolint global ignore=DL3007
-# checkov:skip=CKV_DOCKER_7,CKV_DOCKER_3
+# checkov:skip=CKV_DOCKER_7: latest is desirable here
+# checkov:skip=CKV_DOCKER_3: pre-existing ignore from upstream
 FROM factoriotools/factorio:latest
 
 COPY ./entrypoint.sh /entrypoint.sh
