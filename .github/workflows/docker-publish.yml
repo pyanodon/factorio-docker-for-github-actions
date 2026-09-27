@@ -73,25 +73,11 @@ jobs:
             echo "docker_minor=$v_minor"
             echo "docker_major=$v_major"
           } >> "$GITHUB_OUTPUT"
-      - name: Add patch tag
+      - name: Update tag
         if: github.event_name != 'pull_request'
         uses: richardsimko/update-tag@v2
         with:
-          tag_name: ${{ steps.getver.outputs.v_patch }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Add minor tag
-        if: github.event_name != 'pull_request'
-        uses: richardsimko/update-tag@v2
-        with:
-          tag_name: ${{ steps.getver.outputs.v_minor }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Add major tag
-        if: github.event_name != 'pull_request'
-        uses: richardsimko/update-tag@v2
-        with:
-          tag_name: ${{ steps.getver.outputs.v_major }}
+          tag_name: ${{ 'latest' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Log into registry ${{ env.REGISTRY }}
